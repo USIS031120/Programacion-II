@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         tempVal = (TextView)findViewById(R.id.txtnum2);
         double num2 = Double.parseDouble(tempVal.getText().toString());
 
-        double respuesta = 0;
+        double respuesta = 1;
         RadioButton optOperacionesBasicas = findViewById(R.id.optSuma);
         if ( optOperacionesBasicas.isChecked() ) {
            respuesta = num1 + num2;
@@ -63,6 +63,29 @@ public class MainActivity extends AppCompatActivity {
             case 3:
                 respuesta = num1/num2;
                 break;
+            case 4:
+                for (int i=2; i<=num1; i++){
+                    respuesta *=i;
+                }
+                break;
+            case 5:
+                respuesta = (num2 * num1) / 100;
+                break;
+            case 6:
+                respuesta = Math.pow(num1, num2);
+                break;
+            case 7:
+                respuesta =  Math.pow(num1,(double)1/num2);
+                break;
+            case 8:
+                respuesta = num1 % num2;
+                break;
+            case 9:
+                if (num1 > num2) {
+                    respuesta = num1;
+                } else  {
+                    respuesta = num2;
+                }
         }
 
         tempVal = findViewById(R.id.lblRespuesta);
